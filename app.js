@@ -23,6 +23,7 @@ function Store(name, minCustPerHr, maxCustPerHr, avgCookiesPerCust){
   this.randomNum = function (minCustPerHr, maxCustPerHr){
     return Math.floor(Math.random() * ((maxCustPerHr - minCustPerHr) +1) + minCustPerHr)
   };
+  console.log(allStores, 'here');
   this.generateCustPerHr = function() {
     for(var i = 0; i < storeHours.length; i++) {
 
@@ -34,7 +35,7 @@ function Store(name, minCustPerHr, maxCustPerHr, avgCookiesPerCust){
   };
 
   this.randomCookiesPerHr = function(){
-    for(var i = 0; i < this.customersEachHour.length; i++) {
+    for(var i = 0; i < storeHours.length; i++) {
       var tempCookies = round((this.customersEachHour[i] * this.avgCookiesPerCust), 0);
       this.cookiesEachHour.push(tempCookies);
       this.totalDailyCookies += tempCookies;
@@ -46,26 +47,23 @@ function Store(name, minCustPerHr, maxCustPerHr, avgCookiesPerCust){
 
   this.render = function() {
 
-    for(var i = 0; i < allStores.length; i++) {
-
       var trEl = document.createElement('tr');
 
       var tdEl = document.createElement('td');
-      tdEl.textContent = allStores[i].name;
+      tdEl.textContent = this.name;
       trEl.appendChild(tdEl);
 
-      var totaltdEl = document.createElement('td');
-      totaltdEl.textContent = allStores[i].totalDailyCookies;
-      trEl.appendChild(totaltdEl);
 
       for(var j = 0; j < storeHours.length; j++) {
         var cookiestdEl = document.createElement('td');
         console.log(allStores, 'ALL STORES INSIIDE J LOOP');
-        cookiestdEl.textContent = allStores[i].cookiesEachHour[j];
+        cookiestdEl.textContent = this.cookiesEachHour[j];
         trEl.appendChild(cookiestdEl);
       }
-    }
-    storeTable.appendChild(trEl);
+      var totaltdEl = document.createElement('td');
+      totaltdEl.textContent = this.totalDailyCookies;
+      trEl.appendChild(totaltdEl);
+      storeTable.appendChild(trEl);
   };
 
   this.generateCustPerHr();
@@ -98,6 +96,7 @@ function makeHeaderRow(){
   trEl.appendChild(dailyLocationTotalthEl);
 
   storeTable.appendChild(trEl);
+
 }
 
 makeHeaderRow();
@@ -105,7 +104,8 @@ makeHeaderRow();
 
 function renderShops() {
   for(var i = 0; i < allStores.length; i++) {
-    allStores[i].render();
+    allStores[i].render()
+    console.log(allStores, 'sup');
   }
 }
 renderShops();
