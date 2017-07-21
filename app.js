@@ -21,9 +21,9 @@ function Store(name, minCustPerHr, maxCustPerHr, avgCookiesPerCust){
   this.totalDailyCookies = 0;
   allStores.push(this);
   this.randomNum = function (minCustPerHr, maxCustPerHr){
-    return Math.floor(Math.random() * ((maxCustPerHr - minCustPerHr) +1) + minCustPerHr)
+    return Math.floor(Math.random() * ((maxCustPerHr - minCustPerHr) + 1) + minCustPerHr);
   };
-  console.log(allStores, 'here');
+  // console.log(allStores);
   this.generateCustPerHr = function() {
     for(var i = 0; i < storeHours.length; i++) {
 
@@ -31,7 +31,7 @@ function Store(name, minCustPerHr, maxCustPerHr, avgCookiesPerCust){
       this.customersEachHour.push(tempCust);
       this.totalDailyCustomers += tempCust;
     }
-    console.log(this.customersEachHour, 'Total Daily Customers Total');
+    // console.log(this.customersEachHour, 'Total Daily Customers Total');
   };
 
   this.randomCookiesPerHr = function(){
@@ -41,29 +41,28 @@ function Store(name, minCustPerHr, maxCustPerHr, avgCookiesPerCust){
       this.totalDailyCookies += tempCookies;
     }
 
-    console.log(this.totalDailyCookies, 'Total Daily Cookie Total');
-    console.log(this.cookiesEachHour);
+    // console.log(this.totalDailyCookies, 'Total Daily Cookie Total');
+    // console.log(this.cookiesEachHour);
   };
 
   this.render = function() {
 
-      var trEl = document.createElement('tr');
+    var trEl = document.createElement('tr');
 
-      var tdEl = document.createElement('td');
-      tdEl.textContent = this.name;
-      trEl.appendChild(tdEl);
+    var tdEl = document.createElement('td');
+    tdEl.textContent = this.name;
+    trEl.appendChild(tdEl);
 
 
-      for(var j = 0; j < storeHours.length; j++) {
-        var cookiestdEl = document.createElement('td');
-        console.log(allStores, 'ALL STORES INSIIDE J LOOP');
-        cookiestdEl.textContent = this.cookiesEachHour[j];
-        trEl.appendChild(cookiestdEl);
-      }
-      var totaltdEl = document.createElement('td');
-      totaltdEl.textContent = this.totalDailyCookies;
-      trEl.appendChild(totaltdEl);
-      storeTable.appendChild(trEl);
+    for(var j = 0; j < storeHours.length; j++) {
+      var cookiestdEl = document.createElement('td');
+      cookiestdEl.textContent = this.cookiesEachHour[j];
+      trEl.appendChild(cookiestdEl);
+    }
+    var totaltdEl = document.createElement('td');
+    totaltdEl.textContent = this.totalDailyCookies;
+    trEl.appendChild(totaltdEl);
+    storeTable.appendChild(trEl);
   };
 
   this.generateCustPerHr();
@@ -89,23 +88,67 @@ function makeHeaderRow(){
     var thEl = document.createElement('th');
     thEl.textContent = storeHours[i];
     trEl.appendChild(thEl);
+
   }
+
 
   var dailyLocationTotalthEl = document.createElement('th');
   dailyLocationTotalthEl.textContent = 'Daily Location Total';
   trEl.appendChild(dailyLocationTotalthEl);
 
+
   storeTable.appendChild(trEl);
 
 }
+
+function makeFooterRow(){
+
+  var trEl = document.createElement('tr');
+
+  var totalstdEl = document.createElement('td');
+  totalstdEl.textContent = 'Totals';
+  trEl.appendChild(totalstdEl);
+  // var totalHourlySales = [];
+
+  for(var i = 0; i < storeHours.length; i++){
+    var hourlyTotal = 0;
+    for(var j  = 0; j < allStores.length; j++){
+      hourlyTotal += allStores[j].cookiesEachHour[i];
+    }
+
+    var hourlyTotalTd = document.createElement('td');
+    hourlyTotalTd.textContent = hourlyTotal;
+    trEl.appendChild(hourlyTotalTd);
+  }
+
+  // table.appendChild(footer);
+  // console.log(totalstdEl, 'Total');
+  // storeTable.appendChild(trEl);
+  var grandTotal = 0;
+  for(var i = 0; i < allStores.length; i++){
+    grandTotal += allStores[i].totalDailyCookies;
+}
+ var grandTotaltd = document.createElement('td');
+ grandTotaltd.textContent = grandTotal;
+ trEl.appendChild(grandTotaltd);
+
+storeTable.appendChild(trEl);
+
+}
+
+
+
+
+
 
 makeHeaderRow();
 // +++++++++++++++++
 
 function renderShops() {
   for(var i = 0; i < allStores.length; i++) {
-    allStores[i].render()
-    console.log(allStores, 'sup');
+    allStores[i].render();
+
   }
 }
 renderShops();
+makeFooterRow();
