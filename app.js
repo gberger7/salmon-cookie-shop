@@ -2,6 +2,8 @@
 
 var allStores = [];
 
+var submitButton = document.getElementById('cookieCounter');
+
 var storeHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
 function round(num,places) {
@@ -105,6 +107,11 @@ function makeFooterRow(){
 
   var trEl = document.createElement('tr');
 
+  // var footerRow = document.createElement('tr');
+  // footerRow.textContent = 'Location';
+  // trEl.appendChild(footerRow);
+
+
   var totalstdEl = document.createElement('td');
   totalstdEl.textContent = 'Totals';
   trEl.appendChild(totalstdEl);
@@ -125,24 +132,19 @@ function makeFooterRow(){
   // console.log(totalstdEl, 'Total');
   // storeTable.appendChild(trEl);
   var grandTotal = 0;
-  for(var i = 0; i < allStores.length; i++){
-    grandTotal += allStores[i].totalDailyCookies;
+  for(var k = 0; k < allStores.length; k++){
+    grandTotal += allStores[k].totalDailyCookies;
+  }
+  var grandTotaltd = document.createElement('td');
+  grandTotaltd.textContent = grandTotal;
+  trEl.appendChild(grandTotaltd);
+
+  storeTable.appendChild(trEl);
+
 }
- var grandTotaltd = document.createElement('td');
- grandTotaltd.textContent = grandTotal;
- trEl.appendChild(grandTotaltd);
-
-storeTable.appendChild(trEl);
-
-}
-
-
-
-
-
 
 makeHeaderRow();
-// +++++++++++++++++
+
 
 function renderShops() {
   for(var i = 0; i < allStores.length; i++) {
@@ -152,3 +154,30 @@ function renderShops() {
 }
 renderShops();
 makeFooterRow();
+
+
+
+//creating form
+
+function submitNew(event){
+  event.preventDefault();
+  if(!location === '' || !minC === '' || !maxC === '' || !avgCC === ''){
+    alert('Boxes need to have some content');
+    return;
+  }
+  // var cookieCounter = document.getElementById('cookie-counter');
+  var location = (event.target.location.value);
+  var minC = parseInt(event.target.min.value);
+  var maxC = parseInt(event.target.max.value);
+  var avgCC = parseInt(event.target.avg.value);
+
+  new Store(location, minC, maxC,avgCC);
+  // allLocations.push(newStore);
+
+  stores.innerHTML = '';
+  makeHeaderRow();
+  renderShops();
+
+}
+
+cookieCounter.addEventListener('submit', submitNew);

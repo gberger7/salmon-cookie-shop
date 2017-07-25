@@ -1,40 +1,69 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <meta charset="utf-8">
+  <link rel ="stylesheet" type="text/css" href="style2.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 
- <head>
-  <meta charset="UTF-8">
-  <title>Homegrown Slack!</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
- </head>
+  <ul class="nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html">About Us</a></li>
+    <li><a href="sales.html">Sales</a></li>
+  </ul>
+</head>
+<body>
+  <div class="header">
+    <h1>Homemade Salmon Cookies</h1>
+  </div>
+  <div class="content">
 
- <body>
+    <section>
+      <h2 class="contentHeader">What's fishy about these cookies?<img src="chinook.png" class="chinook"></h2>
+      <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas, augue et varius tempus, mauris dui fringilla leo, non vestibulum mauris eros nec neque. Maecenas sed eros nisl. Sed id dignissim odio. Quisque non ornare augue, non sollicitudin ligula. In luctus magna eget cursus gravida. Etiam faucibus quis turpis in dictum. Vestibulum ornare quam tortor, id mattis metus porta sed. Aliquam ac eleifend neque. Suspendisse potenti. Mauris vehicula semper arcu, dictum posuere velit gravida ac. Aenean eleifend magna lectus, sed eleifend orci porttitor eget. Curabitur lobortis interdum enim nec fringilla. Cras eleifend purus nisl, sed molestie augue malesuada pharetra. Nulla pretium ultricies rutrum. Pellentesque pretium semper turpis, non semper odio. Curabitur ligula lorem, eleifend id tortor sit amet, fringilla dignissim enim. Praesent condimentum condimentum sapien vitae pulvinar. In nibh odio, luctus imperdiet lectus vel, congue sagittis ligula. In porta eleifend lorem, sit amet pulvinar libero auctor nec. Nullam eu malesuada dolor.
+        In hac habitasse platea dictumst. Integer tempus turpis auctor placerat hendrerit. Proin arcu elit, tristique at diam ut, accumsan convallis eros. Ut quis eros at sapien lacinia faucibus ut consectetur eros. Morbi vel felis id nunc pellentesque viverra. Duis faucibus, risus sit amet aliquam malesuada, nulla quam fermentum eros, et dapibus metus turpis sed ex. Quisque aliquet elementum eleifend. Donec accumsan vehicula nibh ut elementum. Sed non lobortis sapien, at auctor ante. Pellentesque maximus fringilla lacus. Duis vehicula efficitur erat, at varius eros fermentum ut. Etiam hendrerit felis erat, sodales tempor arcu accumsan eget. Mauris sit amet aliquet ligula.
+      </p>
+    </section>
+    <section>
+      <h2 class="contentHeader2">Check Our New Merch!</h2>
+      <img src="shirt.png" class="merch">
+      <p class="paragraph2">Cras eget massa ut ipsum convallis elementum. In gravida sem quis interdum pretium. Sed vitae pellentesque risus. Nam ut velit mi. Quisque finibus velit nunc, ac posuere leo luctus id. Donec molestie pharetra dui, fermentum tempor nibh dapibus eu. Pellentesque dui neque, dapibus vel velit at, ornare iaculis ipsum. Nunc in rhoncus odio. Duis nulla massa, ornare sit amet varius et, fringilla at lorem. Maecenas ut luctus odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed ac molestie lorem. Ut augue nisl, hendrerit sit amet accumsan nec, porttitor ut libero.
 
-<table border="1">
+        Sed ultricies augue id nisl sodales, at faucibus leo posuere. Proin varius efficitur risus vel tempus. In tincidunt ac ligula ac aliquam. Aliquam ultrices aliquam eros interdum malesuada. Duis euismod diam bibendum ex iaculis sollicitudin. Vivamus efficitur consectetur tempor. Nulla ac ligula sed nisi tempus scelerisque. Aenean quis ipsum at metus euismod pharetra. Cras eget sodales ante, eu consectetur lorem. Nam consequat vehicula neque pulvinar vehicula. Integer et sapien ligula. Duis elit nunc, rutrum nec leo vulputate, blandit feugiat felis. In molestie, sapien in congue convallis, nulla est sollicitudin ligula, in mollis felis ligula id odio. Nunc vel placerat orci, scelerisque vehicula augue. Aenean sit amet velit eget arcu imperdiet molestie. Curabitur urna libero, vehicula sed lectus eu, porttitor imperdiet purus.
+      </p>
+    </section>
+  </div>
 
-  <h1>Note: Your possible users are Kayla, Kaylee, Nick, Otis, Ron, Sam, and Teddy.</h1>
+  <div>
 
-  <form id="chat-form">
-    <fieldset>
-      <legend>Chat submission form</legend>
+    <section class"morecontent">
+      <h2>Our Store Locations</h2>
+      <ul id="locations">
+        <li>1st and pike</li>
+        <li>SeaTacAirport</li>
+        <li>Seattle Center</li>
+        <li>Capitol Hill</li>
+        <li>Alki</li>
+      </ul>
+    </section>
+  </div>
 
-      <label for="who">Who: </label>
-      <input name="who" type="text" />
+  <div class="footer"></div>
 
-      <label for="says">Comment: </label>
-      <input name="says" type="text" size="50" />
 
-      <button type="submit">Create new comment!</button>
-    </fieldset>
-  </form>
 
-  <button id="clear-chat-list">Clear all comments!</button>
+  <!-- <ul class="locations" -->
 
-  <ul id="chat-list">Here is the textContent of the UL</ul>
+  <!-- <img src="family.jpg"> -->
+  <img src="fish.png">
+  <img src="frosted-cookie.png">
+  <img src="cutter.jpeg">
+  <img src="salmon.png">
+  <img src="shirt.png">
 
-  <script src="chat.js"></script>
 
-</table>
 
- </body>
-
+  <script src="app.js"></script>
+</body>
 </html>
+<!-- //link to other HTML page -->
