@@ -1,0 +1,172 @@
+body {
+  margin: 0;
+  background-color: #FFD9CC;
+}
+/*Navigation*/
+.nav {
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #474747;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Lobster', cursive;
+}
+
+li a:hover {
+  color: #94CCA8;
+  background-color: #737373;
+  transition: 250ms all;
+
+}
+
+/*Text/Headers*/
+h1 {
+  font-family: 'Lobster', cursive;
+  color: #C5FFE0;
+  font-size: 100px;
+  text-decoration: underline wavy white;
+  margin: 0;
+}
+
+h2 {
+  font-family: 'Lobster', cursive;
+  color: #474747;
+  font-size: 50px;
+  margin: 50px;
+  padding-top: 25px;
+  margin-top: 15px;
+}
+
+.chinook {
+  float: right;
+  height: auto;
+    width: auto;
+    max-width: 250px;
+    max-height: 250px;
+    margin-bottom: 0px;
+    display: block;
+
+    /*margin-top: 10px;*/
+
+
+}
+
+/*header*/
+
+.header{
+  height: 500px;
+  line-height: 450px;
+  color: black;
+  font-size: 75px;
+  list-style-type: none;
+  background-image: url(familyedit.jpg);
+  background-size: cover;
+  text-align: center;
+}
+
+.header h1{
+  display: inline-block;
+  line-height: normal;
+}
+
+.header li{
+  display: inline-block;
+  float: left;
+}
+
+.content{
+  margin: 75px;
+  height: 1200px;
+  background-color: white;
+  border-radius: 10px;
+
+}
+
+.contentHeader{
+  margin: 0px 40px;
+  font-size: 40px;
+}
+
+.contentHeader2 {
+  margin: 0px 40px;
+  font-size: 40px;
+  padding-bottom: 40px;
+  padding-top: 5px;
+  }
+
+  .morecontent {
+    margin: 75px;
+    height: 960px;
+    width: 960px;
+    background-color: white;
+    border-radius: 10px;
+
+  }
+
+#locations {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer{
+
+  }
+/*Tables*/
+
+table {
+  border: 10px solid #C5FFE0;
+  background-color: white;
+  margin: 15px;
+}
+
+td {
+  border: 1px solid black;
+
+
+}
+
+tr {
+  color: black;
+}
+th {
+  border: 10px solid white;
+
+}
+
+.paragraph {
+  font-family: 'Roboto Slab', serif;
+  margin-right: 35px;
+  margin-left: 35px;
+  /*margin-top: 0px;*/
+  display: inline-block;
+  clear: right;
+  padding-bottom: 10px;
+}
+
+.paragraph2 {
+  font-family: 'Roboto Slab', serif;
+  margin-right: 35px;
+  margin-left: 35px;
+  display: inline-block;
+  padding-bottom: 10px;
+  float: right;
+  width: 465px;
+  margin-top:
+}
+
+.merch {
+  margin-left: 30px;
+}
